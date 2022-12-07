@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//bot webhook
+$twitterToken = config('twitter.bot_token');
+Route::post("/{$twitterToken}/webhook", "BotController@alphababy");
